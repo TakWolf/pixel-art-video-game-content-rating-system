@@ -18,6 +18,7 @@ https://www.cero.gr.jp/
 ![](assets/Japan-CERO/Japan-CERO_C@2x.png)
 ![](assets/Japan-CERO/Japan-CERO_D@2x.png)
 ![](assets/Japan-CERO/Japan-CERO_Z@2x.png)
+![](assets/Japan-CERO/Japan-CERO_Educational_Database@2x.png)
 
 ![](assets/Japan-CERO/Japan-CERO_Icon_Love@2x.png)
 ![](assets/Japan-CERO/Japan-CERO_Icon_Sexual@2x.png)
