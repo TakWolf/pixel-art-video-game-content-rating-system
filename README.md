@@ -44,3 +44,7 @@ https://www.cero.gr.jp/
 以 640 * 360 为 1 倍设计尺寸
 
 ![](examples/Demo-Genshin_Impact@2x.png)
+
+## 许可证
+
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
