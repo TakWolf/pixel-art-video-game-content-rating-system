@@ -4,6 +4,7 @@ import png
 
 project_root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 assets_dir = os.path.join(project_root_dir, 'assets')
+examples_dir = os.path.join(project_root_dir, 'examples')
 
 
 def _load_png(
@@ -55,16 +56,17 @@ def scale_bitmap(
 
 
 def main():
-    for file_dir, _, file_names in list(os.walk(assets_dir)):
-        for file_name in file_names:
-            if not file_name.endswith('@1x.png'):
-                continue
-            file_1x_path = os.path.join(file_dir, file_name)
-            data_1x = _load_png(file_1x_path)[0]
-            _save_png(data_1x, file_1x_path)
-            data_2x = scale_bitmap(data_1x, 2)
-            file_2x_path = file_1x_path.removesuffix('@1x.png') + '@2x.png'
-            _save_png(data_2x, file_2x_path)
+    for root_dir in [assets_dir, examples_dir]:
+        for file_dir, _, file_names in list(os.walk(root_dir)):
+            for file_name in file_names:
+                if not file_name.endswith('@1x.png'):
+                    continue
+                file_1x_path = os.path.join(file_dir, file_name)
+                data_1x = _load_png(file_1x_path)[0]
+                _save_png(data_1x, file_1x_path)
+                data_2x = scale_bitmap(data_1x, 2)
+                file_2x_path = file_1x_path.removesuffix('@1x.png') + '@2x.png'
+                _save_png(data_2x, file_2x_path)
 
 
 if __name__ == '__main__':
