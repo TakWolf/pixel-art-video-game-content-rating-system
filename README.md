@@ -53,6 +53,19 @@ https://www.cero.gr.jp
 ![](assets/Japan/CERO/CERO_Icon_Drugs@2x.png)
 ![](assets/Japan/CERO/CERO_Icon_Language_Other@2x.png)
 
+### 欧洲
+
+#### 泛欧洲游戏信息组织 (PEGI)
+
+https://pegi.info
+
+![](assets/Europe/PEGI/PEGI_3@2x.png)
+![](assets/Europe/PEGI/PEGI_7@2x.png)
+![](assets/Europe/PEGI/PEGI_12@2x.png)
+![](assets/Europe/PEGI/PEGI_16@2x.png)
+![](assets/Europe/PEGI/PEGI_18@2x.png)
+![](assets/Europe/PEGI/PEGI_PGR@2x.png)
+
 ## 使用例
 
 以 640 * 360 为 1 倍设计尺寸
