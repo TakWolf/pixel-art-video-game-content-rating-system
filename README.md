@@ -49,9 +49,9 @@ https://www.cero.gr.jp
 ![](assets/Japan/CERO/CERO_Icon_Sexual@2x.png)
 ![](assets/Japan/CERO/CERO_Icon_Violence@2x.png)
 ![](assets/Japan/CERO/CERO_Icon_Horror@2x.png)
-![](assets/Japan/CERO/CERO_Icon_Drinking_Smoking@2x.png)
 ![](assets/Japan/CERO/CERO_Icon_Gambling@2x.png)
 ![](assets/Japan/CERO/CERO_Icon_Crime@2x.png)
+![](assets/Japan/CERO/CERO_Icon_Drinking_Smoking@2x.png)
 ![](assets/Japan/CERO/CERO_Icon_Drugs@2x.png)
 ![](assets/Japan/CERO/CERO_Icon_Language_Other@2x.png)
 
