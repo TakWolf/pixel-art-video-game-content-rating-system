@@ -16,6 +16,18 @@ http://jinbao.people.cn/GB/428398/index.html
 ![](assets/China/Mainland/CADPA/CADPA_12+@2x.png)
 ![](assets/China/Mainland/CADPA/CADPA_16+@2x.png)
 
+### 中国台湾
+
+#### 游戏软件分级管理办法 (GSRR)
+
+https://www.gamerating.org.tw/
+
+![](assets/China/Taiwan/GSRR/GSRR_G@2x.png)
+![](assets/China/Taiwan/GSRR/GSRR_P@2x.png)
+![](assets/China/Taiwan/GSRR/GSRR_PG_12@2x.png)
+![](assets/China/Taiwan/GSRR/GSRR_PG_15@2x.png)
+![](assets/China/Taiwan/GSRR/GSRR_R@2x.png)
+
 ### 日本
 
 #### 计算机娱乐分级机构 (CERO)
