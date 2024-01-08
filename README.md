@@ -88,6 +88,8 @@ https://pegi.info
 
 ![](examples/Demo-Genshin_Impact@2x.png)
 
+![](examples/Demo-Switch-Cover@2x.png)
+
 ## 许可证
 
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
