@@ -68,6 +68,13 @@ https://pegi.info
 ![](assets/Europe/PEGI/PEGI_18@2x.png)
 ![](assets/Europe/PEGI/PEGI_PGR@2x.png)
 
+![](assets/Europe/PEGI/PEGI_3_W@2x.png)
+![](assets/Europe/PEGI/PEGI_7_W@2x.png)
+![](assets/Europe/PEGI/PEGI_12_W@2x.png)
+![](assets/Europe/PEGI/PEGI_16_W@2x.png)
+![](assets/Europe/PEGI/PEGI_18_W@2x.png)
+![](assets/Europe/PEGI/PEGI_PGR_W@2x.png)
+
 ![](assets/Europe/PEGI/PEGI_Violence@2x.png)
 ![](assets/Europe/PEGI/PEGI_Bad_Language@2x.png)
 ![](assets/Europe/PEGI/PEGI_Fear@2x.png)
