@@ -68,6 +68,15 @@ https://pegi.info
 ![](assets/Europe/PEGI/PEGI_18@2x.png)
 ![](assets/Europe/PEGI/PEGI_PGR@2x.png)
 
+![](assets/Europe/PEGI/PEGI_Violence@2x.png)
+![](assets/Europe/PEGI/PEGI_Bad_Language@2x.png)
+![](assets/Europe/PEGI/PEGI_Fear@2x.png)
+![](assets/Europe/PEGI/PEGI_Gambling@2x.png)
+![](assets/Europe/PEGI/PEGI_Sex@2x.png)
+![](assets/Europe/PEGI/PEGI_Drugs@2x.png)
+![](assets/Europe/PEGI/PEGI_Discrimination@2x.png)
+![](assets/Europe/PEGI/PEGI_In_Game_Purchases@2x.png)
+
 ## 使用例
 
 ![](examples/Demo-Genshin_Impact@2x.png)
