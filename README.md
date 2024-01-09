@@ -86,9 +86,9 @@ https://pegi.info
 
 ## 使用例
 
-![](examples/Demo-Genshin_Impact@2x.png)
+![](examples/Demo-Splash_Genshin_Impact_CHS@2x.png)
 
-![](examples/Demo-Switch-Cover@2x.png)
+![](examples/Demo-Switch_Cover_Zelda_BOTW_CHT@2x.png)
 
 ## 许可证
 
