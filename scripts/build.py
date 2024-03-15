@@ -2,9 +2,7 @@ import os
 
 import png
 
-project_root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-assets_dir = os.path.join(project_root_dir, 'assets')
-examples_dir = os.path.join(project_root_dir, 'examples')
+from scripts import assets_dir, examples_dir
 
 
 def _load_png(
@@ -40,7 +38,7 @@ def _save_png(
     png.from_array(bitmap, 'RGBA').save(file_path)
 
 
-def scale_bitmap(
+def _scale_bitmap(
         data: list[list[tuple[int, int, int, int]]],
         scale: int,
 ) -> list[list[tuple[int, int, int, int]]]:
@@ -55,7 +53,7 @@ def scale_bitmap(
     return new_data
 
 
-def main():
+def _format_assets():
     for root_dir in [assets_dir, examples_dir]:
         for file_dir, _, file_names in list(os.walk(root_dir)):
             for file_name in file_names:
@@ -64,9 +62,13 @@ def main():
                 file_1x_path = os.path.join(file_dir, file_name)
                 data_1x = _load_png(file_1x_path)[0]
                 _save_png(data_1x, file_1x_path)
-                data_2x = scale_bitmap(data_1x, 2)
+                data_2x = _scale_bitmap(data_1x, 2)
                 file_2x_path = file_1x_path.removesuffix('@1x.png') + '@2x.png'
                 _save_png(data_2x, file_2x_path)
+
+
+def main():
+    _format_assets()
 
 
 if __name__ == '__main__':
