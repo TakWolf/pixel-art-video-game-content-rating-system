@@ -59,12 +59,14 @@ def _format_assets():
             for file_name in file_names:
                 if not file_name.endswith('@1x.png'):
                     continue
-                file_1x_path = os.path.join(file_dir, file_name)
-                data_1x = _load_png(file_1x_path)[0]
-                _save_png(data_1x, file_1x_path)
+
+                file_path_1x = os.path.join(file_dir, file_name)
+                data_1x = _load_png(file_path_1x)[0]
+                _save_png(data_1x, file_path_1x)
+
                 data_2x = _scale_bitmap(data_1x, 2)
-                file_2x_path = file_1x_path.removesuffix('@1x.png') + '@2x.png'
-                _save_png(data_2x, file_2x_path)
+                file_path_2x = file_path_1x.removesuffix('@1x.png') + '@2x.png'
+                _save_png(data_2x, file_path_2x)
 
 
 def main():
