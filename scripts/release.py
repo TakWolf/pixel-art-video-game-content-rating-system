@@ -4,13 +4,13 @@ import zipfile
 
 import markdown
 
-from scripts import project_root_dir, assets_dir, examples_dir, build_dir
+from scripts import project_root_dir, assets_dir, examples_dir, releases_dir
 
 _VERSION = '0.0.0'
 
 
 def _make_release_zip():
-    file_path = os.path.join(build_dir, f'pixel-art-video-game-content-rating-system-{_VERSION}.zip')
+    file_path = os.path.join(releases_dir, f'pixel-art-video-game-content-rating-system-{_VERSION}.zip')
     with zipfile.ZipFile(file_path, 'w') as file:
         for root_dir in [assets_dir, examples_dir]:
             for file_dir, _, file_names in list(os.walk(root_dir)):
@@ -31,16 +31,16 @@ def _make_itchio_readme():
     md_text = md_text.replace('![](assets/', '![](https://raw.githubusercontent.com/TakWolf/pixel-art-video-game-content-rating-system/master/assets/')
     md_text = md_text.replace('![](examples/', '![](https://raw.githubusercontent.com/TakWolf/pixel-art-video-game-content-rating-system/master/examples/')
     html = markdown.markdown(md_text)
-    html_file_path = os.path.join(build_dir, 'itchio-readme.html')
+    html_file_path = os.path.join(releases_dir, 'itchio-readme.html')
     with open(html_file_path, 'w', encoding='utf-8') as file:
         file.write(html)
         file.write('\n')
 
 
 def main():
-    if os.path.exists(build_dir):
-        shutil.rmtree(build_dir)
-    os.makedirs(build_dir)
+    if os.path.exists(releases_dir):
+        shutil.rmtree(releases_dir)
+    os.makedirs(releases_dir)
 
     _make_release_zip()
     _make_itchio_readme()
