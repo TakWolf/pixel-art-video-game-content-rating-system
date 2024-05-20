@@ -8,49 +8,49 @@ from scripts import assets_dir, examples_dir
 def _load_png(
         file_path: str | bytes | os.PathLike[str] | os.PathLike[bytes],
 ) -> tuple[list[list[tuple[int, int, int, int]]], int, int]:
-    width, height, bitmap, _ = png.Reader(filename=file_path).read()
-    data = []
-    for bitmap_row in bitmap:
-        data_row = []
+    width, height, pixels, _ = png.Reader(filename=file_path).read()
+    bitmap = []
+    for pixels_row in pixels:
+        bitmap_row = []
         for x in range(0, width * 4, 4):
-            red = bitmap_row[x]
-            green = bitmap_row[x + 1]
-            blue = bitmap_row[x + 2]
-            alpha = bitmap_row[x + 3]
-            data_row.append((red, green, blue, alpha))
-        data.append(data_row)
-    return data, width, height
+            red = pixels_row[x]
+            green = pixels_row[x + 1]
+            blue = pixels_row[x + 2]
+            alpha = pixels_row[x + 3]
+            bitmap_row.append((red, green, blue, alpha))
+        bitmap.append(bitmap_row)
+    return bitmap, width, height
 
 
 def _save_png(
-        data: list[list[tuple[int, int, int, int]]],
+        bitmap: list[list[tuple[int, int, int, int]]],
         file_path: str | bytes | os.PathLike[str] | os.PathLike[bytes],
 ):
-    bitmap = []
-    for data_row in data:
-        bitmap_row = []
-        for red, green, blue, alpha in data_row:
-            bitmap_row.append(red)
-            bitmap_row.append(green)
-            bitmap_row.append(blue)
-            bitmap_row.append(alpha)
-        bitmap.append(bitmap_row)
-    png.from_array(bitmap, 'RGBA').save(file_path)
+    pixels = []
+    for bitmap_row in bitmap:
+        pixels_row = []
+        for red, green, blue, alpha in bitmap_row:
+            pixels_row.append(red)
+            pixels_row.append(green)
+            pixels_row.append(blue)
+            pixels_row.append(alpha)
+        pixels.append(pixels_row)
+    png.from_array(pixels, 'RGBA').save(file_path)
 
 
 def _scale_bitmap(
-        data: list[list[tuple[int, int, int, int]]],
+        bitmap: list[list[tuple[int, int, int, int]]],
         scale: int,
 ) -> list[list[tuple[int, int, int, int]]]:
-    new_data = []
-    for data_row in data:
+    new_bitmap = []
+    for bitmap_row in bitmap:
         for _ in range(scale):
-            new_data_row = []
-            for pixel in data_row:
+            new_bitmap_row = []
+            for pixel in bitmap_row:
                 for _ in range(scale):
-                    new_data_row.append(pixel)
-            new_data.append(new_data_row)
-    return new_data
+                    new_bitmap_row.append(pixel)
+            new_bitmap.append(new_bitmap_row)
+    return new_bitmap
 
 
 def _format_assets():
@@ -61,12 +61,12 @@ def _format_assets():
                     continue
 
                 file_path_1x = os.path.join(file_dir, file_name)
-                data_1x = _load_png(file_path_1x)[0]
-                _save_png(data_1x, file_path_1x)
+                bitmap_1x = _load_png(file_path_1x)[0]
+                _save_png(bitmap_1x, file_path_1x)
 
-                data_2x = _scale_bitmap(data_1x, 2)
+                bitmap_2x = _scale_bitmap(bitmap_1x, 2)
                 file_path_2x = file_path_1x.removesuffix('@1x.png') + '@2x.png'
-                _save_png(data_2x, file_path_2x)
+                _save_png(bitmap_2x, file_path_2x)
 
 
 def main():
