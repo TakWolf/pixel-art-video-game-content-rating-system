@@ -2,7 +2,7 @@ from pathlib import Path
 
 import png
 
-from scripts import assets_dir, examples_dir
+from tools import assets_dir, examples_dir
 
 
 def _load_png(file_path: Path) -> tuple[list[list[tuple[int, int, int, int]]], int, int]:

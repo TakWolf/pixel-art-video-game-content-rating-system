@@ -3,7 +3,7 @@ import zipfile
 
 import markdown
 
-from scripts import project_root_dir, assets_dir, examples_dir, releases_dir
+from tools import project_root_dir, assets_dir, examples_dir, releases_dir
 
 _VERSION = '0.0.0'
 
