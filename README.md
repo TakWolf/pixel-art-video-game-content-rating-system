@@ -1,4 +1,4 @@
-# 电子游戏分级制度 - 像素化素材
+# 像素素材 - 电子游戏分级制度
 
 [![License](https://img.shields.io/badge/license-CC_BY--SA_4.0-brightgreen)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![GitHub](https://img.shields.io/badge/github-video--game--content--rating--system-orange?logo=github&logoColor=white)](https://github.com/TakWolf/pixel-art-video-game-content-rating-system)
