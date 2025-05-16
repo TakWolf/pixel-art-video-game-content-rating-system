@@ -1,2 +1,2 @@
 pypng==0.20220715.0
-Markdown==3.7
+markdown==3.8
