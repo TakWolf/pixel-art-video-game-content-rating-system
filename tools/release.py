@@ -26,6 +26,7 @@ def _make_release_zip():
 def _make_itchio_readme():
     md_file_path = project_root_dir.joinpath('README.md')
     md_text = md_file_path.read_text('utf-8')
+    md_text = md_text.replace('](LICENSE)', '](https://github.com/TakWolf/pixel-art-video-game-content-rating-system/blob/master/LICENSE)')
     md_text = md_text.replace('![](assets/', '![](https://raw.githubusercontent.com/TakWolf/pixel-art-video-game-content-rating-system/master/assets/')
     md_text = md_text.replace('![](examples/', '![](https://raw.githubusercontent.com/TakWolf/pixel-art-video-game-content-rating-system/master/examples/')
     html = markdown.markdown(md_text)

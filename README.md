@@ -1,6 +1,6 @@
 # 像素素材 - 电子游戏分级制度
 
-[![License](https://img.shields.io/badge/license-CC_BY--SA_4.0-brightgreen)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![License](https://img.shields.io/badge/license-CC_BY--SA_4.0-brightgreen)](LICENSE)
 [![GitHub](https://img.shields.io/badge/github-video--game--content--rating--system-orange?logo=github&logoColor=white)](https://github.com/TakWolf/pixel-art-video-game-content-rating-system)
 [![Itch.io](https://img.shields.io/badge/itch.io-video--game--content--rating--system-FF2449?logo=itch.io&logoColor=white)](https://takwolf.itch.io/pixel-art-video-game-content-rating-system)
 
@@ -96,4 +96,4 @@ https://pegi.info
 
 ## 许可证
 
-[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+[CC BY-SA 4.0](LICENSE)
