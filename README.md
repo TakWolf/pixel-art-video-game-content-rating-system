@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-CC_BY--SA_4.0-brightgreen)](LICENSE)
 [![GitHub](https://img.shields.io/badge/github-video--game--content--rating--system-orange?logo=github&logoColor=white)](https://github.com/TakWolf/pixel-art-video-game-content-rating-system)
-[![Itch.io](https://img.shields.io/badge/itch.io-video--game--content--rating--system-FF2449?logo=itch.io&logoColor=white)](https://takwolf.itch.io/pixel-art-video-game-content-rating-system)
+[![itch.io](https://img.shields.io/badge/itch.io-video--game--content--rating--system-FF2449?logo=itch.io&logoColor=white)](https://takwolf.itch.io/pixel-art-video-game-content-rating-system)
 
 各国家和地区的 [「电子游戏分级制度」](https://zh.wikipedia.org/wiki/%E7%94%B5%E5%AD%90%E6%B8%B8%E6%88%8F%E5%88%86%E7%BA%A7%E5%88%B6%E5%BA%A6) 相关图标的像素化素材。
 
