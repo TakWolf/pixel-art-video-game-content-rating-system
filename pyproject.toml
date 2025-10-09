@@ -1,0 +1,9 @@
+[project]
+name = "pixel-art-video-game-content-rating-system"
+version = "0.0.0"
+requires-python = ">=3.14"
+
+dependencies = [
+    "pypng==0.20220715.0",
+    "markdown==3.9",
+]
