@@ -1,5 +1,5 @@
 import shutil
-import zipfile
+from zipfile import ZipFile
 
 import markdown
 
@@ -10,7 +10,7 @@ _VERSION = '0.0.0'
 
 def _make_release_zip():
     file_path = releases_dir.joinpath(f'pixel-art-video-game-content-rating-system-{_VERSION}.zip')
-    with zipfile.ZipFile(file_path, 'w') as file:
+    with ZipFile(file_path, 'w') as file:
         for root_dir in [assets_dir, examples_dir]:
             for file_dir, _, file_names in root_dir.walk():
                 for file_name in file_names:
