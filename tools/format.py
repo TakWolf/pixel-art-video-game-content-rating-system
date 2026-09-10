@@ -2,7 +2,7 @@ from pathlib import Path
 
 import png
 
-from tools import assets_dir, examples_dir
+from tools import ASSETS_DIR, EXAMPLES_DIR
 
 
 def _load_png(file_path: Path) -> tuple[list[list[tuple[int, int, int, int]]], int, int]:
@@ -46,7 +46,7 @@ def _scale_bitmap(bitmap: list[list[tuple[int, int, int, int]]], scale: int) -> 
 
 
 def _format_assets():
-    for root_dir in [assets_dir, examples_dir]:
+    for root_dir in [ASSETS_DIR, EXAMPLES_DIR]:
         for file_dir, _, file_names in root_dir.walk():
             for file_name in file_names:
                 if not file_name.endswith('@1x.png'):

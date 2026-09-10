@@ -1,7 +1,7 @@
 from pathlib import Path
 
-project_root_dir = Path(__file__).parent.joinpath('..').resolve()
-assets_dir = project_root_dir.joinpath('assets')
-examples_dir = project_root_dir.joinpath('examples')
-build_dir = project_root_dir.joinpath('build')
-releases_dir = build_dir.joinpath('releases')
+PROJECT_ROOT_DIR = Path(__file__).parent.joinpath('..').resolve()
+ASSETS_DIR = PROJECT_ROOT_DIR.joinpath('assets')
+EXAMPLES_DIR = PROJECT_ROOT_DIR.joinpath('examples')
+BUILD_DIR = PROJECT_ROOT_DIR.joinpath('build')
+RELEASES_DIR = BUILD_DIR.joinpath('releases')
