@@ -8,7 +8,7 @@ from tools import PROJECT_ROOT_DIR, ASSETS_DIR, EXAMPLES_DIR, RELEASES_DIR
 _VERSION = '0.0.0'
 
 
-def _make_release_zip():
+def _make_release_zip() -> None:
     file_path = RELEASES_DIR.joinpath(f'pixel-art-video-game-content-rating-system-{_VERSION}.zip')
     with ZipFile(file_path, 'w') as file:
         for root_dir in [ASSETS_DIR, EXAMPLES_DIR]:
@@ -23,7 +23,7 @@ def _make_release_zip():
         file.write(PROJECT_ROOT_DIR.joinpath('README.md'), 'README.md')
 
 
-def _make_itchio_readme():
+def _make_itchio_readme() -> None:
     md_file_path = PROJECT_ROOT_DIR.joinpath('README.md')
     md_text = md_file_path.read_text('utf-8')
     md_text = md_text.replace('](LICENSE)', '](https://github.com/TakWolf/pixel-art-video-game-content-rating-system/blob/master/LICENSE)')
@@ -34,7 +34,7 @@ def _make_itchio_readme():
     html_file_path.write_text(f'{html}\n', 'utf-8')
 
 
-def main():
+def main() -> None:
     if RELEASES_DIR.exists():
         shutil.rmtree(RELEASES_DIR)
     RELEASES_DIR.mkdir(parents=True)

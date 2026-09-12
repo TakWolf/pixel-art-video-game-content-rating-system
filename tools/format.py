@@ -20,7 +20,7 @@ def _load_png(file_path: Path) -> tuple[list[list[tuple[int, int, int, int]]], i
     return bitmap, width, height
 
 
-def _save_png(bitmap: list[list[tuple[int, int, int, int]]], file_path: Path):
+def _save_png(bitmap: list[list[tuple[int, int, int, int]]], file_path: Path) -> None:
     pixels = []
     for bitmap_row in bitmap:
         pixels_row = []
@@ -45,7 +45,7 @@ def _scale_bitmap(bitmap: list[list[tuple[int, int, int, int]]], scale: int) -> 
     return new_bitmap
 
 
-def _format_assets():
+def _format_assets() -> None:
     for root_dir in [ASSETS_DIR, EXAMPLES_DIR]:
         for file_dir, _, file_names in root_dir.walk():
             for file_name in file_names:
@@ -61,7 +61,7 @@ def _format_assets():
                 _save_png(bitmap_2x, file_path_2x)
 
 
-def main():
+def main() -> None:
     _format_assets()
 
 
