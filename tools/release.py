@@ -16,9 +16,11 @@ def _make_release_zip() -> None:
                 for file_name in file_names:
                     if not file_name.endswith('.png'):
                         continue
+
                     file_path = file_dir.joinpath(file_name)
                     arc_path = file_path.relative_to(PROJECT_ROOT_DIR)
                     file.write(file_path, arc_path)
+
         file.write(PROJECT_ROOT_DIR.joinpath('LICENSE'), 'LICENSE')
         file.write(PROJECT_ROOT_DIR.joinpath('README.md'), 'README.md')
 
