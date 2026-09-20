@@ -8,13 +8,13 @@ from tools import ASSETS_DIR, EXAMPLES_DIR
 def _load_png(file_path: Path) -> tuple[list[list[tuple[int, int, int, int]]], int, int]:
     width, height, pixels, _ = png.Reader(filename=file_path).read()
     bitmap = []
-    for pixels_row in pixels:
+    for row in pixels:
         bitmap_row = []
         for x in range(0, width * 4, 4):
-            red = pixels_row[x]
-            green = pixels_row[x + 1]
-            blue = pixels_row[x + 2]
-            alpha = pixels_row[x + 3]
+            red = row[x]
+            green = row[x + 1]
+            blue = row[x + 2]
+            alpha = row[x + 3]
             bitmap_row.append((red, green, blue, alpha))
         bitmap.append(bitmap_row)
     return bitmap, width, height
@@ -23,13 +23,13 @@ def _load_png(file_path: Path) -> tuple[list[list[tuple[int, int, int, int]]], i
 def _save_png(bitmap: list[list[tuple[int, int, int, int]]], file_path: Path) -> None:
     pixels = []
     for bitmap_row in bitmap:
-        pixels_row = []
+        row = []
         for red, green, blue, alpha in bitmap_row:
-            pixels_row.append(red)
-            pixels_row.append(green)
-            pixels_row.append(blue)
-            pixels_row.append(alpha)
-        pixels.append(pixels_row)
+            row.append(red)
+            row.append(green)
+            row.append(blue)
+            row.append(alpha)
+        pixels.append(row)
     png.from_array(pixels, 'RGBA').save(file_path)
 
 
