@@ -47,18 +47,16 @@ def _scale_bitmap(bitmap: list[list[tuple[int, int, int, int]]], scale: int) -> 
 
 def _format_assets() -> None:
     for root_dir in [ASSETS_DIR, EXAMPLES_DIR]:
-        for file_dir, _, file_names in root_dir.walk():
-            for file_name in file_names:
-                if not file_name.endswith('@1x.png'):
-                    continue
+        for file_path_1x in root_dir.rglob('*@1x.png'):
+            if not file_path_1x.is_file():
+                continue
 
-                file_path_1x = file_dir.joinpath(file_name)
-                bitmap_1x = _load_png(file_path_1x)[0]
-                _save_png(bitmap_1x, file_path_1x)
+            bitmap_1x = _load_png(file_path_1x)[0]
+            _save_png(bitmap_1x, file_path_1x)
 
-                bitmap_2x = _scale_bitmap(bitmap_1x, 2)
-                file_path_2x = file_path_1x.with_stem(file_path_1x.stem.replace('@1x', '@2x'))
-                _save_png(bitmap_2x, file_path_2x)
+            bitmap_2x = _scale_bitmap(bitmap_1x, 2)
+            file_path_2x = file_path_1x.with_stem(file_path_1x.stem.replace('@1x', '@2x'))
+            _save_png(bitmap_2x, file_path_2x)
 
 
 def main() -> None:

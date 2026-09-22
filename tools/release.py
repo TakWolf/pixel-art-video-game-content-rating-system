@@ -12,14 +12,12 @@ def _make_release_zip() -> None:
     file_path = RELEASES_DIR.joinpath(f'pixel-art-video-game-content-rating-system-{_VERSION}.zip')
     with ZipFile(file_path, 'w') as file:
         for root_dir in [ASSETS_DIR, EXAMPLES_DIR]:
-            for file_dir, _, file_names in root_dir.walk():
-                for file_name in file_names:
-                    if not file_name.endswith('.png'):
-                        continue
+            for file_path in sorted(root_dir.rglob('*.png')):
+                if not file_path.is_file():
+                    continue
 
-                    file_path = file_dir.joinpath(file_name)
-                    arc_path = file_path.relative_to(PROJECT_ROOT_DIR)
-                    file.write(file_path, arc_path)
+                arc_path = file_path.relative_to(PROJECT_ROOT_DIR)
+                file.write(file_path, arc_path)
 
         file.write(PROJECT_ROOT_DIR.joinpath('LICENSE'), 'LICENSE')
         file.write(PROJECT_ROOT_DIR.joinpath('README.md'), 'README.md')
