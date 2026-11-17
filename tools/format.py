@@ -1,36 +1,37 @@
 from pathlib import Path
 
-import png
+from png import PngImage, PngHeader, PngColorType, PngFilterType
 
 from tools import ASSETS_DIR, EXAMPLES_DIR
 
 
 def _load_png(file_path: Path) -> tuple[list[list[tuple[int, int, int, int]]], int, int]:
-    width, height, pixels, _ = png.Reader(filename=file_path).read()
-    bitmap = []
-    for row in pixels:
-        bitmap_row = []
-        for x in range(0, width * 4, 4):
-            red = row[x]
-            green = row[x + 1]
-            blue = row[x + 2]
-            alpha = row[x + 3]
-            bitmap_row.append((red, green, blue, alpha))
-        bitmap.append(bitmap_row)
-    return bitmap, width, height
+    image = PngImage.load(file_path)
+    if image.header.color_type != PngColorType.TRUECOLOR_ALPHA or image.header.bit_depth != 8:
+        image = image.to_rgba(bit_depth=8)
+    bitmap = [
+        [
+            (row[x], row[x + 1], row[x + 2], row[x + 3])
+            for x in range(0, len(row), 4)
+        ]
+        for row in image.bitmap
+    ]
+    return bitmap, image.header.width, image.header.height
 
 
 def _save_png(bitmap: list[list[tuple[int, int, int, int]]], file_path: Path) -> None:
-    pixels = []
-    for bitmap_row in bitmap:
-        row = []
-        for red, green, blue, alpha in bitmap_row:
-            row.append(red)
-            row.append(green)
-            row.append(blue)
-            row.append(alpha)
-        pixels.append(row)
-    png.from_array(pixels, 'RGBA').save(file_path)
+    image = PngImage(
+        header=PngHeader((len(bitmap[0]), len(bitmap))),
+        bitmap=[
+            [
+                sample
+                for pixel in row
+                for sample in pixel
+            ]
+            for row in bitmap
+        ],
+    )
+    image.save(file_path, filter_type=PngFilterType.NONE)
 
 
 def _scale_bitmap(bitmap: list[list[tuple[int, int, int, int]]], scale: int) -> list[list[tuple[int, int, int, int]]]:
